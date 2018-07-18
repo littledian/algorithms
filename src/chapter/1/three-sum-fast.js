@@ -1,7 +1,7 @@
 import binarySearch from './binary-search'
 
 export default function threeSumFast (array) {
-  const arr = array.sort((a, b) => a- b)
+  const arr = array.sort((a, b) => a - b)
 
   const n = arr.length
   let count = 0
