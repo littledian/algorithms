@@ -8,6 +8,13 @@ export default class Random {
     this.logger = new Logger()
   }
 
+  /**
+   * generateRandomIntArray
+   * @param min
+   * @param max
+   * @param length
+   * @returns {*}
+   */
   generateRandomIntArray (min = 0, max = 100, length = 100) {
     if (isNaN(min) || isNaN(max) || isNaN(length)) {
       this.logger.error(`params min, max and length must all number`)
@@ -28,6 +35,13 @@ export default class Random {
     return result
   }
 
+  /**
+   * generateRandomIntArrayOfNoRepeat
+   * @param min
+   * @param max
+   * @param length
+   * @returns {*}
+   */
   generateRandomIntArrayOfNoRepeat (min = 0, max = 100, length = 100) {
     if (isNaN(min) || isNaN(max) || isNaN(length)) {
       this.logger.error(`params min, max and length must all number`)
