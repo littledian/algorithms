@@ -6,6 +6,8 @@ import binarySearch from './binary-search'
  * @returns {number}
  */
 export default function twoSumFast (array) {
+  if (!Array.isArray(array)) return -1
+
   const arr = array.sort((a, b) => a - b)
 
   const n = arr.length

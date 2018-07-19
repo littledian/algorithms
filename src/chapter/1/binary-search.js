@@ -5,6 +5,8 @@
  * @returns {number}
  */
 export default function binarySearch (key, array) {
+  if (!Array.isArray(array)) return -1
+
   const arr = array.sort((a, b) => a - b)
   let lo = 0
   let hi = arr.length - 1

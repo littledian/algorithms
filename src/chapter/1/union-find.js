@@ -1,7 +1,7 @@
 /**
- * UnionFind
+ * UN
  */
-export default class UnionFind {
+export class UF {
   /**
    * constructor
    * @param n
@@ -44,5 +44,11 @@ export default class UnionFind {
    */
   getCount () {
     return this.count
+  }
+}
+
+export default function UnionFind (arr1, arr2) {
+  if (!Array.isArray(arr1)) {
+
   }
 }

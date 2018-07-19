@@ -7,11 +7,24 @@ describe('Test binarySearch', () => {
   beforeAll(() => {
     random = new Random()
   })
-  test('Array from file RandomInt_0_1000000_1000000', () => {
+
+  test('Test array', () => {
     const array = random.generateRandomIntArray()
 
     const index = binarySearch(array[30], array)
 
     expect(index).toBeGreaterThan(-1)
+  })
+
+  test('Test not array', () => {
+    const index = binarySearch(21, 2131)
+
+    expect(index).toBe(-1)
+  })
+
+  test('Test not found', () => {
+    const index = binarySearch(12, [2131, 3231])
+
+    expect(index).toBe(-1)
   })
 })
