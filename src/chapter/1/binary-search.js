@@ -1,3 +1,9 @@
+/**
+ * binarySearch
+ * @param key
+ * @param array
+ * @returns {number}
+ */
 export default function binarySearch (key, array) {
   const arr = array.sort((a, b) => a - b)
   let lo = 0

@@ -1,5 +1,10 @@
 import binarySearch from './binary-search'
 
+/**
+ * twoSumFast
+ * @param array
+ * @returns {number}
+ */
 export default function twoSumFast (array) {
   const arr = array.sort((a, b) => a - b)
 

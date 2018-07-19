@@ -1,5 +1,10 @@
 import binarySearch from './binary-search'
 
+/**
+ * threeSumFast
+ * @param array
+ * @returns {number}
+ */
 export default function threeSumFast (array) {
   const arr = array.sort((a, b) => a - b)
 
