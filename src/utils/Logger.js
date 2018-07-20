@@ -1,12 +1,14 @@
 import chalk from 'chalk'
 
+const showLog = false
+
 export default class Logger {
   /**
    * error
    * @param s
    */
   error (s) {
-    console.log(Logger.chalk.red(s))
+    showLog && console.log(Logger.chalk.red(s))
   }
 
   /**
@@ -14,7 +16,7 @@ export default class Logger {
    * @param s
    */
   warn (s) {
-    console.log(Logger.chalk.yellow(s))
+    showLog && console.log(Logger.chalk.yellow(s))
   }
 
   /**
@@ -22,7 +24,7 @@ export default class Logger {
    * @param s
    */
   info (s) {
-    console.log(Logger.chalk.blue(s))
+    showLog && console.log(Logger.chalk.blue(s))
   }
 
   /**
@@ -30,7 +32,7 @@ export default class Logger {
    * @param s
    */
   success (s) {
-    console.log(Logger.chalk.green(s))
+    showLog && console.log(Logger.chalk.green(s))
   }
 
   /**
@@ -38,7 +40,7 @@ export default class Logger {
    * @param s
    */
   start (s) {
-    console.log(Logger.chalk.bgBlue('Start') + '    ' + this.chalk.blue(s) + '\n')
+    showLog && console.log(Logger.chalk.bgBlue('Start') + '    ' + Logger.chalk.blue(s) + '\n')
   }
 
   /**
@@ -46,7 +48,7 @@ export default class Logger {
    * @param s
    */
   end (s) {
-    console.log(Logger.chalk.bgBlue('End') + '    ' + this.chalk.blue(s) + '\n')
+    showLog && console.log(Logger.chalk.bgBlue('End') + '    ' + Logger.chalk.blue(s) + '\n')
   }
 
   /**
@@ -55,7 +57,7 @@ export default class Logger {
    * @constructor
    */
   static STATR (s) {
-    console.log(Logger.chalk.bgBlue('Start') + '    ' + this.chalk.blue(s) + '\n')
+    showLog && console.log(Logger.chalk.bgBlue('Start') + '    ' + Logger.chalk.blue(s) + '\n')
   }
 
   /**
@@ -64,7 +66,7 @@ export default class Logger {
    * @constructor
    */
   static END (s) {
-    console.log(Logger.chalk.bgBlue('End') + '    ' + this.chalk.blue(s)  + '\n')
+    showLog && console.log(Logger.chalk.bgBlue('End') + '    ' + Logger.chalk.blue(s) + '\n')
   }
 }
 

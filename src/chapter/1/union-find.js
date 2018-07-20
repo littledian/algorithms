@@ -3,7 +3,7 @@ import Logger from '@/utils/Logger'
 /**
  * UN
  */
-export class UF {
+class UF {
   /**
    * constructor
    * @param n
@@ -133,17 +133,17 @@ export class WeightQuickUnionUF extends UF {
   }
 }
 
-export default function unionFind (arr1, arr2, uf) {
+export function unionFind (arr1, arr2, uf) {
   const logger = new Logger()
 
   if (!(uf instanceof UF)) {
     logger.error('param uf must instance of class extends UF')
-    return
+    return -1
   }
 
-  if ((uf instanceof UF) && uf.prototype === UF) {
+  if ((uf instanceof UF) && uf.constructor === UF) {
     logger.error('param uf must instance of class extends UF but cant UF self')
-    return
+    return -1
   }
 
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
