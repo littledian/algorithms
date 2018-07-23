@@ -15,9 +15,9 @@ describe('Test BaseSort class', () => {
   })
 
   test('Test method isSorted with default asc value true', () => {
-    expect(baseSort.isSorted([1, 2, 3])).toBe(false)
+    expect(baseSort.isSorted([1, 2, 3])).toBe(true)
     expect(baseSort.isSorted([1, 3, 2])).toBe(false)
-    expect(baseSort.isSorted([3, 2, 1])).toBe(true)
+    expect(baseSort.isSorted([3, 2, 1])).toBe(false)
   })
 
   test('Test method isSorted with asc value false', () => {
