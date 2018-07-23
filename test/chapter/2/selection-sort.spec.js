@@ -1,5 +1,5 @@
 import SelectionSort from '@/chapter/2/selection-sort'
-import Random from '@/utils/Random'
+import Random from '@/utils/random'
 
 describe('Test SelectionSort class', () => {
   let sort, random

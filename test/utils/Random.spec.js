@@ -1,4 +1,4 @@
-import Random from '@/utils/Random'
+import Random from '@/utils/random'
 
 describe('Test Random class', () => {
   let random

@@ -1,4 +1,4 @@
-import Random from '@/utils/Random'
+import Random from '@/utils/random'
 import binarySearch from '@/chapter/1/binary-search'
 
 describe('Test binarySearch', () => {

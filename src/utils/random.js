@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-import Logger from './Logger'
+import Logger from './logger'
 
 export default class Random {
   constructor () {

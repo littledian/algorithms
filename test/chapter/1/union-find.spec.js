@@ -1,4 +1,4 @@
-import Random from '@/utils/Random'
+import Random from '@/utils/random'
 import {QuickFindUF, QuickUnionUF, WeightQuickUnionUF, unionFind} from '@/chapter/1/union-find'
 
 describe('Test unionFind function and UnionFind classes', () => {
