@@ -29,7 +29,7 @@ export default class Random {
 
     const result = []
     for (let i = 0; i < length; i++) {
-      result.push(min + Math.ceil(Math.random() * width))
+      result.push(min + Math.floor(Math.random() * width))
     }
 
     return result
@@ -66,7 +66,7 @@ export default class Random {
 
     const result = []
     for (let i = 0; i < length; i++) {
-      const r = Math.ceil(Math.random() * (width - i)) + i
+      const r = Math.floor(Math.random() * (width - i)) + i
       ;[n[i], n[r]] = [n[r], n[i]]
 
       result.push(n[i])

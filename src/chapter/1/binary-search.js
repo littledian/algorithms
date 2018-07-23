@@ -12,7 +12,7 @@ export default function binarySearch (key, array) {
   let hi = arr.length - 1
 
   while (lo <= hi) {
-    const mid = lo + Math.ceil((hi - lo) / 2)
+    const mid = lo + Math.floor((hi - lo) / 2)
     if (arr[mid] > key) {
       hi = mid - 1
     } else if (arr[mid] < key) {
