@@ -9,7 +9,7 @@ export default class BaseSort {
     ;[array[p], array[q]] = [array[q], array[p]]
   }
 
-  isSorted (array, asc = false) {
+  isSorted (array, asc = true) {
     if (!Array.isArray(array)) {
       return false
     }
