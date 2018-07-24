@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 
-const showLog = false
+const showLog = true
 
 export default class Logger {
   /**
