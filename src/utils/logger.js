@@ -1,6 +1,16 @@
 import chalk from 'chalk'
 
-const showLog = true
+const param = {}
+const arr = process.argv.splice(2)
+arr.forEach(s => {
+  const o = s.split('=')
+  param[o[0]] = o[1]
+})
+
+const showLog =
+  Object.keys(param).indexOf('showLog') !== -1 &&
+  param['showLog'] !== 'false' &&
+  param['showLog'] !== false
 
 export default class Logger {
   /**
