@@ -4,6 +4,8 @@ import Logger from '../../utils/logger'
 import InsertionSort from './insertion-sort'
 import ShellSort from './shell-sort'
 import SelectionSort from './selection-sort'
+import MergeSort from './merge-sort'
+import MergeBuSort from './merge-bu-sort'
 
 const random = new Random()
 const logger = new Logger()
@@ -11,16 +13,17 @@ const logger = new Logger()
 const sortObj = {
   shell: new ShellSort(),
   insertion: new InsertionSort(),
-  selection: new SelectionSort()
+  selection: new SelectionSort(),
+  mergeSort: new MergeSort(),
+  mergeBuSort: new MergeBuSort()
 }
-
-const length = 20
 
 let oldKeys
 let newKeys = Object.keys(sortObj)
+let i = 1
 
-for (let i = 1; i <= length; i++) {
-  const n = Math.pow(2, i)
+while (newKeys.length > 0) {
+  const n = Math.pow(2, i++)
 
   oldKeys = newKeys
   newKeys = []
