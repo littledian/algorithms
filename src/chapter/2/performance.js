@@ -37,7 +37,7 @@ while (newKeys.length > 0) {
     const end = new Date()
 
     const last = end.getTime() - start.getTime()
-    if (last < 10 * 1000) newKeys.push(key)
+    if (last < 100 * 1000) newKeys.push(key)
 
     const isSorted = sort.isSorted(arr)
     if (isSorted) {
