@@ -6,6 +6,8 @@ import ShellSort from './shell-sort'
 import SelectionSort from './selection-sort'
 import MergeSort from './merge-sort'
 import MergeBuSort from './merge-bu-sort'
+import QuickSort from './quick-sort'
+import Quick3WaySort from './quick-3way-sort'
 
 const random = new Random()
 const logger = new Logger()
@@ -15,7 +17,9 @@ const sortObj = {
   insertion: new InsertionSort(),
   selection: new SelectionSort(),
   mergeSort: new MergeSort(),
-  mergeBuSort: new MergeBuSort()
+  mergeBuSort: new MergeBuSort(),
+  quickSort: new QuickSort(),
+  quick3WaySort: new Quick3WaySort()
 }
 
 let oldKeys
@@ -37,7 +41,7 @@ while (newKeys.length > 0) {
     const end = new Date()
 
     const last = end.getTime() - start.getTime()
-    if (last < 100 * 1000) newKeys.push(key)
+    if (last < 10 * 1000) newKeys.push(key)
 
     const isSorted = sort.isSorted(arr)
     if (isSorted) {
