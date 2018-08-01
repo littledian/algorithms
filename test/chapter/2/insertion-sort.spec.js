@@ -11,9 +11,11 @@ describe('Test InsertionSort class', () => {
   })
 
   test('Test method sort', () => {
-    let array = random.generateRandomIntArray()
-    array = sort.sort(array)
+    for (let i = 0; i < 10; i++) {
+      let array = random.generateRandomIntArray()
+      array = sort.sort(array)
 
-    expect(sort.isSorted(array, true)).toBe(true)
+      expect(sort.isSorted(array, true) || sort.isSorted(array, false)).toBe(true)
+    }
   })
 })

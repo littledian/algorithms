@@ -2,7 +2,7 @@ import BaseSort from './base-sort'
 
 export default class MinPQSort extends BaseSort {
   sink (array, j, n) {
-    while (j * 2 < n) {
+    while (j * 2 <= n) {
       let k = j * 2
       if (k < n && array[k] > array[k + 1]) {
         k++
