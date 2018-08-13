@@ -8,6 +8,8 @@ import MergeSort from './merge-sort'
 import MergeBuSort from './merge-bu-sort'
 import QuickSort from './quick-sort'
 import Quick3WaySort from './quick-3way-sort'
+import MinPQSort from './min-pq-sort'
+import SystemSort from './system-sort'
 
 const random = new Random()
 const logger = new Logger()
@@ -19,7 +21,9 @@ const sortObj = {
   mergeSort: new MergeSort(),
   mergeBuSort: new MergeBuSort(),
   quickSort: new QuickSort(),
-  quick3WaySort: new Quick3WaySort()
+  quick3WaySort: new Quick3WaySort(),
+  minPQSort: new MinPQSort(),
+  systemSort: new SystemSort()
 }
 
 let oldKeys
@@ -43,7 +47,7 @@ while (newKeys.length > 0) {
     const last = end.getTime() - start.getTime()
     if (last < 10 * 1000) newKeys.push(key)
 
-    const isSorted = sort.isSorted(arr)
+    const isSorted = sort.isSorted(arr, true) || sort.isSorted(arr, false)
     if (isSorted) {
       logger.info(`${n}————${last}————${key}`)
     } else {
