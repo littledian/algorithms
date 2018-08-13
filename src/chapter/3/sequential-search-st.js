@@ -1,4 +1,4 @@
-import ST from './ts'
+import ST from './st'
 
 class Node {
   constructor (key, value, next) {
