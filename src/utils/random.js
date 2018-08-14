@@ -74,4 +74,40 @@ export default class Random {
 
     return result
   }
+
+  generateRandomStringIntMap (min = 0, max = 100, length = 100) {
+    if (isNaN(min) || isNaN(max) || isNaN(length)) {
+      this.logger.error(`params min, max and length must all number`)
+      return
+    }
+
+    const width = max - min
+    if (width <= 0) {
+      this.logger.error(`params min:${min} must lower than max:${max}`)
+      return
+    }
+
+    const s = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    let keyLength = Math.log(length) / Math.log(s.length)
+    keyLength = Math.floor(keyLength)
+    if (keyLength < 1) keyLength = 1
+
+    function keyGenerator () {
+      let result = ''
+      for (let i = 0; i < keyLength; i++) {
+        result += s[Math.floor(Math.random() * s.length)]
+      }
+      return result
+    }
+
+    const result = []
+    for (let i = 0; i < length; i++) {
+      result.push({
+        key: keyGenerator(),
+        value: min + Math.floor(Math.random() * width)
+      })
+    }
+
+    return result
+  }
 }

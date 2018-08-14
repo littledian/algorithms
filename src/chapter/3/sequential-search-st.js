@@ -33,4 +33,8 @@ export default class SequentialSearchST extends ST {
 
     this.first = new Node(key, value, this.first)
   }
+
+  clear () {
+    this.first = undefined
+  }
 }

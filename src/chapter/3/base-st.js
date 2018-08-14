@@ -14,6 +14,11 @@ export default class BaseST {
   get (key) {}
 
   /**
+   * 清空符号表
+   */
+  clear () {}
+
+  /**
    * 是否是正确的
    * @param array
    * @return {boolean}

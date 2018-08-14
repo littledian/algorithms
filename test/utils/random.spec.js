@@ -52,4 +52,15 @@ describe('Test Random class', () => {
       expect(r.indexOf(r[i], i + 1)).toBe(-1)
     }
   })
+
+  test('Test generateRandomStringIntMap', () => {
+    const r = random.generateRandomStringIntMap(10, 20, 40)
+    expect(r.length).toBe(40)
+
+    r.forEach(item => {
+      expect(item.key.length).toBe(1)
+      expect(item.value).toBeGreaterThanOrEqual(10)
+      expect(item.value).toBeLessThan(20)
+    })
+  })
 })

@@ -18,19 +18,19 @@ const sortObj = {
   shell: new ShellSort(),
   insertion: new InsertionSort(),
   selection: new SelectionSort(),
-  mergeSort: new MergeSort(),
-  mergeBuSort: new MergeBuSort(),
-  quickSort: new QuickSort(),
-  quick3WaySort: new Quick3WaySort(),
-  minPQSort: new MinPQSort(),
-  systemSort: new SystemSort()
+  merge: new MergeSort(),
+  mergeBu: new MergeBuSort(),
+  quick: new QuickSort(),
+  quick3Way: new Quick3WaySort(),
+  minPQ: new MinPQSort(),
+  system: new SystemSort()
 }
 
 let oldKeys
 let newKeys = Object.keys(sortObj)
 let i = 1
 
-while (newKeys.length > 0) {
+while (newKeys.length) {
   const n = Math.pow(2, i++)
 
   oldKeys = newKeys
