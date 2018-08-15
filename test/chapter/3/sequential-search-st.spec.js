@@ -12,11 +12,15 @@ describe('Test SequentialSearchST class', () => {
 
   test('Test method  put and get', () => {
     for (let i = 0; i < 10; i++) {
-      const array = random.generateRandomStringIntMap()
-      for (const item of array) {
-        st.put(item.key, item.value)
+      const map = random.generateRandomStringIntMap()
+      const obj = {}
+      for (let i = 0; i < map.keys.length; i++) {
+        st.put(map.keys[i], map.values[i])
+        obj[map.keys[i]] = map.values[i]
       }
-      expect(st.isRight(array)).toBe(true)
+      Object.keys(obj).forEach(key => {
+        expect(st.get(key)).toBe(obj[key])
+      })
     }
   })
 })

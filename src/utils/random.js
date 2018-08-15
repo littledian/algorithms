@@ -100,12 +100,13 @@ export default class Random {
       return result
     }
 
-    const result = []
+    const result = {
+      keys: [],
+      values: []
+    }
     for (let i = 0; i < length; i++) {
-      result.push({
-        key: keyGenerator(),
-        value: min + Math.floor(Math.random() * width)
-      })
+      result.keys.push(keyGenerator())
+      result.values.push(min + Math.floor(Math.random() * width))
     }
 
     return result

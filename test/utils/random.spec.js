@@ -55,12 +55,15 @@ describe('Test Random class', () => {
 
   test('Test generateRandomStringIntMap', () => {
     const r = random.generateRandomStringIntMap(10, 20, 40)
-    expect(r.length).toBe(40)
+    expect(r.keys.length).toBe(40)
+    expect(r.values.length).toBe(40)
 
-    r.forEach(item => {
-      expect(item.key.length).toBe(1)
-      expect(item.value).toBeGreaterThanOrEqual(10)
-      expect(item.value).toBeLessThan(20)
+    r.keys.forEach(item => {
+      expect(item.length).toBe(1)
+    })
+    r.values.forEach(item => {
+      expect(item).toBeGreaterThanOrEqual(10)
+      expect(item).toBeLessThan(20)
     })
   })
 })

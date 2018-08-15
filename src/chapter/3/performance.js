@@ -21,20 +21,21 @@ while (newKeys.length) {
   newKeys = []
 
   oldKeys.forEach((key) => {
-    let arr = random.generateRandomStringIntMap(0, n, n)
+    let map = random.generateRandomStringIntMap(0, n, n)
     const st = searchObj[key]
     st.clear()
 
     const obj = {}
-    arr.forEach(item => {
-      obj[item.key] = item.value
-    })
+    for (let i = 0; i < map.keys.length; i++) {
+      obj[map.keys[i]] = map.values[i]
+    }
     const keys = Object.keys(obj)
     let right = true
 
     const start = new Date()
-    for (const item of arr) {
-      st.put(item.key, item.value)
+    for (let i = 0; i < map.keys.length; i++) {
+      st.put(map.keys[i], map.values[i])
+      obj[map.keys[i]] = map.values[i]
     }
     for (const key of keys) {
       if (st.get(key) !== obj[key]) {
@@ -47,10 +48,11 @@ while (newKeys.length) {
     const last = end.getTime() - start.getTime()
     if (last < 10 * 1000) newKeys.push(key)
 
+    logger.info(JSON.stringify(process.memoryUsage()))
     if (right) {
-      logger.info(`${n}————${last}————${key}`)
+      logger.info(`${n}————${last}————${key}\n`)
     } else {
-      logger.error(`${key} fail to put and get`)
+      logger.error(`${key} fail to put and get\n`)
     }
   })
 }

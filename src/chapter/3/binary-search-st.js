@@ -90,4 +90,10 @@ export default class BinarySearchST extends SortedSt {
       return this.n
     }
   }
+
+  clear () {
+    this.n = 0
+    this._keys = []
+    this._values = []
+  }
 }
