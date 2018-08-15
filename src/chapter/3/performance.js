@@ -48,11 +48,10 @@ while (newKeys.length) {
     const last = end.getTime() - start.getTime()
     if (last < 10 * 1000) newKeys.push(key)
 
-    logger.info(JSON.stringify(process.memoryUsage()))
     if (right) {
-      logger.info(`${n}————${last}————${key}\n`)
+      logger.info(`${n}————${last}————${key}`)
     } else {
-      logger.error(`${key} fail to put and get\n`)
+      logger.error(`${key} fail to put and get`)
     }
   })
 }

@@ -48,11 +48,10 @@ while (newKeys.length) {
     if (last < 10 * 1000) newKeys.push(key)
 
     const isSorted = sort.isSorted(arr, true) || sort.isSorted(arr, false)
-    logger.info(JSON.stringify(process.memoryUsage()))
     if (isSorted) {
-      logger.info(`${n}————${last}————${key}\n`)
+      logger.info(`${n}————${last}————${key}`)
     } else {
-      logger.error(`${key} fail to sort array\n`)
+      logger.error(`${key} fail to sort array`)
     }
   })
 }
