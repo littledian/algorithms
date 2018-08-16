@@ -61,20 +61,21 @@ export default class BinarySearchST extends SortedSt {
 
   ceiling (key) {
     const i = this.rank(key)
-    return this._keys(i)
+    return this._keys[i]
   }
 
   floor (key) {
     const i = this.rank(key)
-    if (this._keys(i) === key) return key
+    if (this._keys[i] === key) return key
     else return this._keys[i - 1]
   }
 
   delete (key) {
     const i = this.rank(key)
-    if (this._keys(i) === key) {
+    if (this._keys[i] === key) {
       this._keys.splice(i, 1)
       this._values.splice(i, 1)
+      this.n--
     }
   }
 
