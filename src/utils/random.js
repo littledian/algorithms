@@ -91,6 +91,7 @@ export default class Random {
     let keyLength = Math.log(length) / Math.log(s.length)
     keyLength = Math.floor(keyLength)
     if (keyLength < 1) keyLength = 1
+    if (keyLength > 3) keyLength = 3
 
     function keyGenerator () {
       let result = ''

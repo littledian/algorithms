@@ -2,13 +2,15 @@ import Random from '../../utils/random'
 import Logger from '../../utils/logger'
 import SequentialSearchST from './sequential-search-st'
 import BinarySearchST from './binary-search-st'
+import BST from './bst'
 
 const random = new Random()
 const logger = new Logger()
 
 const searchObj = {
   sequential: new SequentialSearchST(),
-  binary: new BinarySearchST()
+  binary: new BinarySearchST(),
+  bst: new BST()
 }
 
 let oldKeys
