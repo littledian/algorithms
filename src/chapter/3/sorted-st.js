@@ -64,8 +64,7 @@ export default class SortedSt extends UnSortedST {
     let lo
     let hi
     if (args.length === 2) {
-      lo = args[0]
-      hi = args[1]
+      [lo, hi] = args
     } else {
       lo = this.min()
       hi = this.max()

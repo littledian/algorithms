@@ -81,8 +81,7 @@ export default class BinarySearchST extends SortedSt {
 
   size (...args) {
     if (args.length === 2) {
-      const lo = args[0]
-      const hi = args[1]
+      const [lo, hi] = args
 
       if (hi < lo) return 0
       else if (this.contains(hi)) return this.rank(hi) - this.rank(lo) + 1
@@ -96,5 +95,26 @@ export default class BinarySearchST extends SortedSt {
     this.n = 0
     this._keys = []
     this._values = []
+  }
+
+  keys (...args) {
+    let lo
+    let hi
+    let result = []
+    if (args.length === 2) {
+      [lo, hi] = args
+    } else {
+      lo = this.min()
+      hi = this.max()
+    }
+
+    for (let i = this.rank(lo); i < this.rank(hi); i++) {
+      result.push(this._keys[i])
+    }
+    if (this.contains(hi)) {
+      result.push(this._keys[this.rank(hi)])
+    }
+
+    return result
   }
 }

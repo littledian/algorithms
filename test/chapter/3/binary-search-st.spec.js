@@ -92,4 +92,21 @@ describe('Test SequentialSearchST class', () => {
     st.delete(21)
     expect(st.size()).toBe(size - 1)
   })
+
+  test('Test method keys', () => {
+    let keys = st.keys()
+    expect(keys.length).toBe(9)
+
+    keys = st.keys(2, 7)
+    expect(keys.length).toBe(4)
+
+    keys = st.keys(2, 8)
+    expect(keys.length).toBe(5)
+
+    keys = st.keys(2.1, 8)
+    expect(keys.length).toBe(4)
+
+    keys = st.keys(2, 9)
+    expect(keys.length).toBe(5)
+  })
 })
