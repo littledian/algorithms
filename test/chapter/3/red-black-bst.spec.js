@@ -1,12 +1,12 @@
-import BST from '@/chapter/3/bst'
+import RedBlackBST from '@/chapter/3/red-black-bst'
 import Random from '@/utils/random'
 
-describe('Test BST class', () => {
+describe('Test RedBlackBST class', () => {
   let st
   let random
 
   beforeAll(() => {
-    st = new BST()
+    st = new RedBlackBST()
     random = new Random()
   })
 
@@ -25,11 +25,11 @@ describe('Test BST class', () => {
   })
 })
 
-describe('Test BST class', () => {
+describe('Test RedBlackBST class', () => {
   let st
 
   beforeAll(() => {
-    st = new BST()
+    st = new RedBlackBST()
   })
 
   beforeEach(() => {
@@ -91,6 +91,18 @@ describe('Test BST class', () => {
     expect(st.size()).toBe(size)
     st.delete(21)
     expect(st.size()).toBe(size - 1)
+  })
+
+  test('Test method deleteMin', () => {
+    const min = st.min()
+    st.deleteMin()
+    expect(st.get(min)).toBe(undefined)
+  })
+
+  test('Test method deleteMax', () => {
+    const max = st.max()
+    st.deleteMax()
+    expect(st.get(max)).toBe(undefined)
   })
 
   test('Test method keys', () => {

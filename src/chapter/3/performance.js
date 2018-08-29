@@ -3,6 +3,7 @@ import Logger from '../../utils/logger'
 import SequentialSearchST from './sequential-search-st'
 import BinarySearchST from './binary-search-st'
 import BST from './bst'
+import RedBlackBST from './red-black-bst'
 
 const random = new Random()
 const logger = new Logger()
@@ -10,7 +11,8 @@ const logger = new Logger()
 const searchObj = {
   sequential: new SequentialSearchST(),
   binary: new BinarySearchST(),
-  bst: new BST()
+  bst: new BST(),
+  RedBlackBST: new RedBlackBST()
 }
 
 let oldKeys
