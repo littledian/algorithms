@@ -4,11 +4,11 @@ import Graph from '@/chapter/4/Graph'
 describe('Test DepthFirstSearch Class', () => {
   test('Test DepthFirstSearch Class', () => {
     const edges = [
-      [0, 4],
+      [0, 5],
       [4, 3],
       [0, 1],
       [9, 12],
-      [6, 3],
+      [6, 4],
       [5, 4],
       [0, 2],
       [11, 12],

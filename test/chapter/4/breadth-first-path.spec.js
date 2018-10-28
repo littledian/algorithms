@@ -1,8 +1,8 @@
-import Path from '@/chapter/4/depth-first-path'
+import Path from '@/chapter/4/breadth-first-path'
 import Graph from '@/chapter/4/Graph'
 
-describe('Test DepthFirstPath Class', () => {
-  test('Test DepthFirstPath Class', () => {
+describe('Test BreadthFirstPath Class', () => {
+  test('Test BreadthFirstPath Class', () => {
     const edges = [
       [0, 5],
       [4, 3],
@@ -34,6 +34,6 @@ describe('Test DepthFirstPath Class', () => {
     expect(search.hasPathTo(12)).toBe(false)
 
     expect(search.pathTo(12)).toBe(undefined)
-    expect(search.pathTo(5).join()).toBe('0,5')
+    expect(search.pathTo(4).join()).toBe('0,6,4')
   })
 })
